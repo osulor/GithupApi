@@ -3,6 +3,7 @@ package com.example.week6_day6_githubapi.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.week6_day6_githubapi.R
 import com.example.week6_day6_githubapi.model.Repository
 import com.example.week6_day6_githubapi.presenter.GitContract
@@ -27,11 +28,16 @@ class ReposDetailActivity : AppCompatActivity(), GitContract.View {
     override fun displayRepositories(repositories: List<Repository>) {
         val index = intent.getIntExtra("index",0)
         val currentRepo = repositories.get(index)
+        val url = repositories.get(index).owner.avatarUrl.toString()
         repoName_textView.text = "Repository name: " + currentRepo.name
         githubRepo_link.text = "Project Link: " + currentRepo.htmlUrl
         language_textView.text = "Language Used for the Project: " + currentRepo.language
         creationDate_textView.text = "Project Created on: " + currentRepo.createdAt
         lastUpdate_textView.text = "Last Update on: " + currentRepo.updatedAt
+
+        Glide.with(this).load(url).into(github_avatar)
+
+
     }
 
     override fun displayError() {

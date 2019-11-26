@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_backgroundColor"
     tools:context=".view.MainActivity">
 
     <TextView
         android:id="@+id/username_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="34sp"
+        android:textColor="#ffff"
         android:layout_margin="16dp"
         app:layout_constraintBottom_toTopOf="@id/username_textView"
         app:layout_constraintLeft_toLeftOf="parent"

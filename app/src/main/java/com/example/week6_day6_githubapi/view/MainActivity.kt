@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), GitContract.View {
     }
 
     override fun displayRepositories(repositories: List<Repository>) {
-        username_textView.text = repositories.get(1).owner.login.toString()
+        username_textView.text = "Hello " + repositories.get(1).owner.login.toString() + ", here are your repositories:"
         val adapter = RepositoriesAdapter(repositories)
         repos_listView.adapter = adapter
         repos_listView.layoutManager = LinearLayoutManager(this)
